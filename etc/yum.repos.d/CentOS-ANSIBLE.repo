@@ -1,0 +1,32 @@
+# CentOS-ANSIBLE.repo
+#
+# Please see https://wiki.centos.org/SpecialInterestGroup/ConfigManagementSIG/Ansible
+# for more information
+
+[centos-ansible26]
+name=CentOS-7 - Ansible26
+mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=configmanagement-ansible26
+#baseurl=http://mirror.centos.org/$contentdir/7/configmanagement/$basearch/ansible26/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-ConfigManagement
+
+[centos-ansible26-testing]
+name=CentOS-7 - Ansible26 Testing
+baseurl=http://buildlogs.centos.org/centos/7/configmanagement/$basearch/ansible26/
+gpgcheck=0
+enabled=0
+
+[centos-ansible26-debuginfo]
+name=CentOS-7 - Ansible26 Debug
+baseurl=http://debuginfo.centos.org/$contentdir/7/configmanagement/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-ConfigManagement
+
+[centos-ansible26-source]
+name=CentOS-7 - Ansible26 Source
+baseurl=http://vault.centos.org/$contentdir/7/configmanagement/Source/ansible26/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-ConfigManagement
