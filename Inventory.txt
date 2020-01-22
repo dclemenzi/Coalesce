@@ -1,0 +1,32 @@
+[OSEv3:children]
+masters
+nodes
+
+[OSEv3:vars]
+ansible_ssh_user=azureuser
+ansible_become=yes
+debug_level=2
+openshift_deployment_type=origin
+
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+
+openshift_master_cluster_method=native
+openshift_master_cluster_hostname=masterVM-0
+openshift_master_cluster_public_hostname=masterVM-0
+
+openshift_master_default_subdomain=kube.incadencecorp.com
+openshift_use_dnsmasq=True
+
+openshift_disable_check=disk_availability,memory_availability
+
+
+[masters]
+masterVM-0
+
+[etcd]
+masterVM-0
+
+[nodes]
+masterVM-0 openshift_node_group_name='node-config-master'
+appnodeVM-0 openshift_node_group_name='node-config-compute'
+infraVM-0 openshift_node_group_name='node-config-infra'
