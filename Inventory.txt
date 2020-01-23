@@ -1,6 +1,7 @@
 [OSEv3:children]
 masters
 nodes
+etcd
 
 [OSEv3:vars]
 ansible_ssh_user=azureuser
@@ -14,7 +15,7 @@ openshift_master_cluster_method=native
 openshift_master_cluster_hostname=masterVM-0
 openshift_master_cluster_public_hostname=masterVM-0
 
-openshift_master_default_subdomain=kube.incadencecorp.com
+openshift_master_default_subdomain=apps.okd.<Infra-IP>.xip.io
 openshift_use_dnsmasq=True
 
 openshift_disable_check=disk_availability,memory_availability
